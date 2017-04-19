@@ -12,5 +12,7 @@ namespace A_Hand_2.Models
         public string FurtherDetail { get; set; }
         public double MaxValue { get; set; }
         public DateTime TaskStartDate { get; set; }
+        public TaskType TaskType { get; set; }
+        public int TaskTypeId { get; set; }
     }
 }
