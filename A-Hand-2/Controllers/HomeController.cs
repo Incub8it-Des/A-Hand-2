@@ -15,14 +15,14 @@ namespace A_Hand_2.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Everything you ever wanted to know about A Hand 2 Help!";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Here's how you can contact us:";
 
             return View();
         }
