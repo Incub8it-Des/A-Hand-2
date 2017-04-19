@@ -5,7 +5,7 @@ using System.Web;
 
 namespace A_Hand_2.Models
 {
-    public class Task
+    public class AskTask
     {
         public int Id { get; set; }
         public string BasicDescription { get; set; }

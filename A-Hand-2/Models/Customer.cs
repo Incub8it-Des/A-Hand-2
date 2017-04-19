@@ -15,7 +15,8 @@ namespace A_Hand_2.Models
         public string Address3 { get; set; }
         public string Address4 { get; set; }
         public string Postcode { get; set; }
-        public Task Task { get; set; }
-        public int TaskId { get; set; }
+        public AskTask AskTask { get; set; }
+        public int AskTaskId { get; set; }
+
     }
 }
