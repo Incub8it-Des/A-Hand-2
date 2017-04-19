@@ -22,6 +22,8 @@ namespace A_Hand_2.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<AskTask> AskTasks { get; set; }
+        public DbSet<TaskType> TaskTypes { get; set; }
         
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
