@@ -17,6 +17,8 @@ namespace A_Hand_2.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string Postcode { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -24,7 +26,7 @@ namespace A_Hand_2.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<AskTask> AskTasks { get; set; }
         public DbSet<TaskType> TaskTypes { get; set; }
-        
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
