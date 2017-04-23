@@ -47,5 +47,12 @@ namespace A_Hand_2.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult New()
+        {
+            var viewModel = new AskTask();
+
+            return View(viewModel);
+        }
     }
 }

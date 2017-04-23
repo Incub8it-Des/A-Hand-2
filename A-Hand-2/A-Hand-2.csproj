@@ -171,8 +171,8 @@
     <Compile Include="Controllers\AskTaskController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HowItWorksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StaticSiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,8 +291,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\HowItWorks\HowItWorks.cshtml" />
+    <Content Include="Views\StaticSite\HowItWorks.cshtml" />
     <Content Include="Views\AskTask\AskTask_1.cshtml" />
+    <Content Include="Views\AskTask\New.cshtml" />
+    <Content Include="Views\StaticSite\Testimonials.cshtml" />
+    <Content Include="Views\StaticSite\BecomeAHand.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

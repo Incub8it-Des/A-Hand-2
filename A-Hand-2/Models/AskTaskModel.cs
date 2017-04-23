@@ -15,7 +15,9 @@ namespace A_Hand_2.Models
         [Display(Name = "Basic Task Description")]
         public string BasicDescription { get; set; }
 
+        [Display(Name = "Further Details")]
         public string FurtherDetail { get; set; }
+
         public double MaxValue { get; set; }
         public DateTime TaskStartDate { get; set; }
 

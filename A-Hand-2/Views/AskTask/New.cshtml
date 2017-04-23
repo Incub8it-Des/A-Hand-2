@@ -1,0 +1,16 @@
+﻿@model A_Hand_2.Models.AskTask
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>To start registering your request, please complete the following form:</h3>
+
+@using (Html.BeginForm("Save", "AskTask"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.BasicDescription)
+        @Html.TextBoxFor(m => m.BasicDescription, new { @class = "form-control"})
+    </div>   
+}

@@ -5,8 +5,8 @@
 <div class="jumbotron">
     <h1>A Hand 2 Help</h1>
     <p class="lead">&quot;A Hand 2 help&quot; is the worlds 1st website that actually helps people get help from people who help people!<br/> (Terms and conditions apply)</p>
-    <p><a href="http://www.ahand2.help/AskTask/AskTask_1" class="btn btn-primary btn-lg">Start now &raquo;</a></p>
-    <p>@Html.ActionLink("Ask for help", "AskTask_1", "AskTask", null, new { @class = "btn btn-primary" })</p>
+    @*<p><a href="http://www.ahand2.help/AskTask/AskTask_1" class="btn btn-primary btn-lg">Start now &raquo;</a></p>*@
+    <p>@Html.ActionLink("Get started now »", "New", "AskTask", null, new { @class = "btn btn-primary" })</p>
 </div>
 
 <div class="row">
@@ -20,11 +20,13 @@
     <div class="col-md-4">
         <h2>Testimonials</h2>
         <p>Read all about how Andy got help with his little problem and how we helped him stop it turning into a big one</p>
-        <p><a class="btn btn-default" href="http://www.ahand2.help">Read more! &raquo;</a></p>
+        @*<p><a class="btn btn-default" href="http://www.ahand2.help">Read more! &raquo;</a></p>*@
+        <p>@Html.ActionLink("Learn more »", "Testimonials", "StaticSite", null, new { @class = "btn btn-default" })</p>
     </div>
     <div class="col-md-4">
         <h2>Become a Hand</h2>
         <p>Have too much time on your hands and want to stop sitting on them? Find out how right here </p>
-        <p><a class="btn btn-default" href="http://www.ahand2.help">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Learn more »", "BecomeAHand", "StaticSite", null, new { @class = "btn btn-default" })</p>
+        @*<p><a class="btn btn-default" href="http://www.ahand2.help">Learn more &raquo;</a></p>*@
     </div>
 </div>
