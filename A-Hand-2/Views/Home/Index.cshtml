@@ -5,7 +5,6 @@
 <div class="jumbotron">
     <h1>A Hand 2 Help</h1>
     <p class="lead">&quot;A Hand 2 help&quot; is the worlds 1st website that actually helps people get help from people who help people!<br/> (Terms and conditions apply)</p>
-    @*<p><a href="http://www.ahand2.help/AskTask/AskTask_1" class="btn btn-primary btn-lg">Start now &raquo;</a></p>*@
     <p>@Html.ActionLink("Get started now »", "New", "AskTask", null, new { @class = "btn btn-primary" })</p>
 </div>
 
@@ -15,7 +14,8 @@
         <p>
             Tell us all your personal details and we'll help you get started on the road to being helped with some help!
         </p>
-        <p><a class="btn btn-default" href="http://www.ahand2.help">Learn more &raquo;</a></p>
+        @*<p><a class="btn btn-default" href="http://www.ahand2.help">Learn more &raquo;</a></p>*@
+        <p>@Html.ActionLink("Learn more »", "New", "AskTask", null, new { @class = "btn btn-default" })</p>
     </div>
     <div class="col-md-4">
         <h2>Testimonials</h2>
