@@ -22,19 +22,6 @@ namespace A_Hand_2.Controllers
             _Context.Dispose();
         }
 
-        public ActionResult AskTask_1()
-        {
-            //var askTaskViewModel = new AskTaskViewModel();
-
-            //var askTask = _Context.AskTasks.Include(c => c.BasicDescription).ToList();
-            //var askTask = new AskTask() {BasicDescription = "Davie"};
-
-            var askTask = _Context.AskTasks.SingleOrDefault(c => c.Id == 5);
-
-
-
-            return View(askTask);
-        }
 
         public ActionResult Save(AskTask askTask)
 
@@ -50,9 +37,24 @@ namespace A_Hand_2.Controllers
 
         public ActionResult New()
         {
-            var viewModel = new AskTask();
+            //var viewModel = new AskTask();
+            var taskTypes = _Context.TaskTypes.ToList();
+
+            var viewModel = new AskTaskViewModel()
+                {
+                    TaskTypes = taskTypes
+                };
 
             return View(viewModel);
+        }
+
+        public ActionResult Create(AskTask askTask)
+        {
+            askTask.CustomerId = 5;
+            _Context.AskTasks.Add(askTask);
+
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }

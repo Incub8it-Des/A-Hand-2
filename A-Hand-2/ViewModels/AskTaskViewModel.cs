@@ -8,7 +8,8 @@ namespace A_Hand_2.ViewModels
 {
     public class AskTaskViewModel
     {
+        public IEnumerable<TaskType> TaskTypes { get; set; }
         public AskTask AskTask {get; set;}
-
+        //public int CustId {21}
     }
 }

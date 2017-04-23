@@ -18,7 +18,7 @@ namespace A_Hand_2.Models
         [Display(Name = "Further Details")]
         public string FurtherDetail { get; set; }
 
-        public double MaxValue { get; set; }
+        public double? MaxValue { get; set; }
         public DateTime TaskStartDate { get; set; }
 
         public Customer Customer { get; set; }
