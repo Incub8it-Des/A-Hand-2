@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using A_Hand_2.Models;
 using A_Hand_2.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace A_Hand_2.Controllers
 {
@@ -50,8 +51,10 @@ namespace A_Hand_2.Controllers
 
         public ActionResult Create(AskTask askTask)
         {
+            var memberID = User.Identity.GetUserId();
             askTask.CustomerId = 5;
             _Context.AskTasks.Add(askTask);
+            _Context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
 

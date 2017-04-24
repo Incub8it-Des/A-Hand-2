@@ -19,7 +19,7 @@ namespace A_Hand_2.Models
         public string FurtherDetail { get; set; }
 
         public double? MaxValue { get; set; }
-        public DateTime TaskStartDate { get; set; }
+        public DateTime? TaskStartDate { get; set; }
 
         public Customer Customer { get; set; }
         public int CustomerId { get; set; }
