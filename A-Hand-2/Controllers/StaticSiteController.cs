@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace A_Hand_2.Controllers
 {
+    [AllowAnonymous]
     public class StaticSiteController : Controller
     {
+        
         public ActionResult HowItWorks()
         {
             return (View());
