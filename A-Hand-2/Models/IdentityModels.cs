@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.AccessControl;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -19,6 +20,10 @@ namespace A_Hand_2.Models
         }
 
         //public string Postcode { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+
 
     }
 
