@@ -17,9 +17,11 @@ namespace A_Hand_2.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        //private ApplicationDbContext _Context;
 
         public AccountController()
         {
+            //_Context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -79,6 +81,16 @@ namespace A_Hand_2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+
+                    //var currentUserId = User.Identity.GetUserId();
+
+                    //var customerInfo = _Context.Customers.SingleOrDefault(p => p.UserId = currentUserId);
+
+                    //if (customerInfo == null)
+                    //{
+                    //    customerInfo = _Context.Customers.Create();
+                    //}
+                    
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -151,7 +163,7 @@ namespace A_Hand_2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Postcode = model.Postcode};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -419,6 +431,8 @@ namespace A_Hand_2.Controllers
                     _signInManager = null;
                 }
             }
+
+            //_Context.Dispose();
 
             base.Dispose(disposing);
         }

@@ -18,7 +18,8 @@ namespace A_Hand_2.Models
             return userIdentity;
         }
 
-        public string Postcode { get; set; }
+        //public string Postcode { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

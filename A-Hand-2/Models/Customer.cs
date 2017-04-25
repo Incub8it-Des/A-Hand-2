@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace A_Hand_2.Models
 {
     public class Customer
     {
+        [Key, ForeignKey("User")]
+        public string UserId { get; set; }
+
         public int Id { get; set; }
         public string DisplayName { get; set; }
         public string Address1 { get; set; }
@@ -17,6 +21,8 @@ namespace A_Hand_2.Models
         public string Postcode { get; set; }
         //public AskTask AskTask { get; set; }
         //public int AskTaskId { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
 
     }
 }
