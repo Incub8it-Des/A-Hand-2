@@ -51,13 +51,33 @@ namespace A_Hand_2.Controllers
 
         public ActionResult Create(AskTask askTask)
         {
-            var memberID = User.Identity.GetUserId();
             askTask.CustomerId = 5;
             _Context.AskTasks.Add(askTask);
             _Context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
 
+        }
+
+        public ActionResult ShowCascade()
+        {
+            var user = _Context.Users;
+            var cascadeModel = new CascadeViewModel()
+            {
+             User   = user
+            };
+
+            return View(cascadeModel);
+        }
+
+        public ActionResult ShowCustomers()
+        {
+            var custList = _Context.Customers;
+            var customers = new CustomerViewModel()
+            {
+                Customers = custList
+            };
+            return View(customers);
         }
     }
 }

@@ -10,6 +10,16 @@ namespace A_Hand_2.ViewModels
     {
         public IEnumerable<TaskType> TaskTypes { get; set; }
         public AskTask AskTask {get; set;}
-        //public int CustId {21}
+        
+    }
+
+    public class CascadeViewModel
+    {
+        public IEnumerable<ApplicationUser> User { get; set; }
+    }
+
+    public class CustomerViewModel
+    {
+        public IEnumerable<Customer> Customers { get; set; }
     }
 }

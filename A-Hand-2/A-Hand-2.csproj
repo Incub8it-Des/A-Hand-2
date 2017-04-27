@@ -319,6 +319,8 @@
     <Content Include="Views\AskTask\New.cshtml" />
     <Content Include="Views\StaticSite\Testimonials.cshtml" />
     <Content Include="Views\StaticSite\BecomeAHand.cshtml" />
+    <Content Include="Views\AskTask\ShowCascade.cshtml" />
+    <Content Include="Views\AskTask\ShowCustomers.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

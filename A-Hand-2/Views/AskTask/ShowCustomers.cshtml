@@ -1,0 +1,19 @@
+﻿
+@*@model IEnumerable<A_Hand_2.Models.Customer>*@
+@model A_Hand_2.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "ShowCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowCustomers</h2>
+<table>
+@foreach (var customer in Model.Customers)
+{
+    <tr>
+        <td style="padding-right: 5px;">@customer.Address1</td>
+        <td> @customer.Address2</td>
+    </tr>
+}
+</table>

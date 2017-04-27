@@ -7,6 +7,13 @@
 
 <h3>To start registering your request, please complete the following form:</h3>
 
+@*<ul>
+@foreach (var user in Model.ApplicationUsers)
+{
+    <li>@user.Email</li>
+} 
+    
+</ul>*@
 @using (Html.BeginForm("Create", "AskTask"))
 {
     <div class="form-group">
