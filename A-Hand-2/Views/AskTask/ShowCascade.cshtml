@@ -13,7 +13,10 @@
     @foreach (var appUser in Model.User)
 
     {
-        <li>@appUser.Email</li>
+        <li>@appUser.Email - </li>
+        <li>@appUser.Customers.Address1</li>
+
+        
     }
 </ul>
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -61,10 +62,12 @@ namespace A_Hand_2.Controllers
 
         public ActionResult ShowCascade()
         {
-            var user = _Context.Users;
+            var user = _Context.Users.Include(U => U.Customers);
+            //var cust = _Context.Users.;
             var cascadeModel = new CascadeViewModel()
             {
              User   = user
+             //Customers = cust
             };
 
             return View(cascadeModel);

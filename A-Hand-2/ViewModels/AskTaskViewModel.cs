@@ -16,6 +16,7 @@ namespace A_Hand_2.ViewModels
     public class CascadeViewModel
     {
         public IEnumerable<ApplicationUser> User { get; set; }
+        //public IEnumerable<Customer> Customers { get; set; }
     }
 
     public class CustomerViewModel
