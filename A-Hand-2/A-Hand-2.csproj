@@ -244,6 +244,14 @@
     <Compile Include="Migrations\201704251435473_CreateApplicationUserIDLinkToAskTask.Designer.cs">
       <DependentUpon>201704251435473_CreateApplicationUserIDLinkToAskTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704281358452_RemovedRelationBetweenCustomerAndAskTask.cs" />
+    <Compile Include="Migrations\201704281358452_RemovedRelationBetweenCustomerAndAskTask.Designer.cs">
+      <DependentUpon>201704281358452_RemovedRelationBetweenCustomerAndAskTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705030923250_UpdateModelsAfterReturningFromLearning.cs" />
+    <Compile Include="Migrations\201705030923250_UpdateModelsAfterReturningFromLearning.Designer.cs">
+      <DependentUpon>201705030923250_UpdateModelsAfterReturningFromLearning.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -265,6 +273,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\A-Hand-2.pubxml" />
     <None Include="Properties\PublishProfiles\Testing.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -387,6 +396,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704251435473_CreateApplicationUserIDLinkToAskTask.resx">
       <DependentUpon>201704251435473_CreateApplicationUserIDLinkToAskTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281358452_RemovedRelationBetweenCustomerAndAskTask.resx">
+      <DependentUpon>201704281358452_RemovedRelationBetweenCustomerAndAskTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705030923250_UpdateModelsAfterReturningFromLearning.resx">
+      <DependentUpon>201705030923250_UpdateModelsAfterReturningFromLearning.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

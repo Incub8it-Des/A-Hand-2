@@ -52,7 +52,7 @@ namespace A_Hand_2.Controllers
 
         public ActionResult Create(AskTask askTask)
         {
-            askTask.CustomerId = 5;
+            //askTask.CustomerId = 5;
             _Context.AskTasks.Add(askTask);
             _Context.SaveChanges();
 

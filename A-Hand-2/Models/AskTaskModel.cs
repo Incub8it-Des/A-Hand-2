@@ -26,13 +26,12 @@ namespace A_Hand_2.Models
         public DateTime? TaskStartDate { get; set; }
 
         public Customer Customer { get; set; }
-        public int CustomerId { get; set; }
+        //public int CustomerId { get; set; }
 
-        public TaskType TaskType { get; set; }
         public int TaskTypeId { get; set; }
-
+        public TaskType TaskType { get; set; }
+  
         public string UserId { get; set; }
-        [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }
 
     }
