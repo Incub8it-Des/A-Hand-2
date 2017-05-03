@@ -12,19 +12,14 @@ namespace A_Hand_2.Models
         [Key, ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
 
-        //[ForeignKey("ApplicationUser")]
-        //public string Id { get; set; }
         public string DisplayName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string Address3 { get; set; }
         public string Address4 { get; set; }
         public string Postcode { get; set; }
-        //public AskTask AskTask { get; set; }
-        //public int AskTaskId { get; set; }
 
-        //public string ApplicationUserId { get; set; }
-        public virtual ApplicationUser ApplicationUser{ get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
 
 

@@ -7,13 +7,13 @@ namespace A_Hand_2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class UpdateCustomerModel : IMigrationMetadata
+    public sealed partial class CreateAskTask : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateCustomerModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateAskTask));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705031325518_UpdateCustomerModel"; }
+            get { return "201705031410426_CreateAskTask"; }
         }
         
         string IMigrationMetadata.Source

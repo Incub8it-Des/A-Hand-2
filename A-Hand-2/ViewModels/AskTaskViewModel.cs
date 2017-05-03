@@ -8,8 +8,8 @@ namespace A_Hand_2.ViewModels
 {
     public class AskTaskViewModel
     {
-        public IEnumerable<TaskType> TaskTypes { get; set; }
-        public AskTask AskTask {get; set;}
+        //public IEnumerable<TaskType> TaskTypes { get; set; }
+        //public AskTask AskTask {get; set;}
         
     }
 
@@ -21,6 +21,6 @@ namespace A_Hand_2.ViewModels
 
     public class CustomerViewModel
     {
-        public IEnumerable<Customer> Customers { get; set; }
+        //public IEnumerable<Customer> Customers { get; set; }
     }
 }

@@ -252,16 +252,24 @@
     <Compile Include="Migrations\201705030923250_UpdateModelsAfterReturningFromLearning.Designer.cs">
       <DependentUpon>201705030923250_UpdateModelsAfterReturningFromLearning.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705031325518_UpdateCustomerModel.cs" />
-    <Compile Include="Migrations\201705031325518_UpdateCustomerModel.Designer.cs">
-      <DependentUpon>201705031325518_UpdateCustomerModel.cs</DependentUpon>
+    <Compile Include="Migrations\201705031402481_DeletedCustomerAndAskTask.cs" />
+    <Compile Include="Migrations\201705031402481_DeletedCustomerAndAskTask.Designer.cs">
+      <DependentUpon>201705031402481_DeletedCustomerAndAskTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705031406231_CreateCustomer.cs" />
+    <Compile Include="Migrations\201705031406231_CreateCustomer.Designer.cs">
+      <DependentUpon>201705031406231_CreateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705031410426_CreateAskTask.cs" />
+    <Compile Include="Migrations\201705031410426_CreateAskTask.Designer.cs">
+      <DependentUpon>201705031410426_CreateAskTask.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AskTask.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\AskTaskModel.cs" />
     <Compile Include="Models\TaskType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -407,8 +415,14 @@
     <EmbeddedResource Include="Migrations\201705030923250_UpdateModelsAfterReturningFromLearning.resx">
       <DependentUpon>201705030923250_UpdateModelsAfterReturningFromLearning.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705031325518_UpdateCustomerModel.resx">
-      <DependentUpon>201705031325518_UpdateCustomerModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705031402481_DeletedCustomerAndAskTask.resx">
+      <DependentUpon>201705031402481_DeletedCustomerAndAskTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031406231_CreateCustomer.resx">
+      <DependentUpon>201705031406231_CreateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031410426_CreateAskTask.resx">
+      <DependentUpon>201705031410426_CreateAskTask.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

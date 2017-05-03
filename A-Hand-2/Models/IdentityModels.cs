@@ -22,7 +22,7 @@ namespace A_Hand_2.Models
         //public string Postcode { get; set; }
 
         public virtual Customer Customer { get; set; }
-        //public virtual AskTask AskTask { get; set; }
+        public virtual AskTask AskTask { get; set; }
         public virtual ICollection<AskTask> AskTasks { get; set; }
 
         
