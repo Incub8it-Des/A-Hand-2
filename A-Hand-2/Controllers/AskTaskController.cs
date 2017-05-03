@@ -28,9 +28,11 @@ namespace A_Hand_2.Controllers
         public ActionResult Save(AskTask askTask)
 
         {
+            //var string userID_Guid = 
             var askTaskInDb = _Context.AskTasks.Single(c => c.Id == 5);
 
             askTaskInDb.BasicDescription = askTask.BasicDescription;
+            askTaskInDb.User = askTask.User;
 
             _Context.SaveChanges();
 
@@ -62,7 +64,7 @@ namespace A_Hand_2.Controllers
 
         public ActionResult ShowCascade()
         {
-            var user = _Context.Users.Include(U => U.Customers);
+            var user = _Context.Users.Include(U => U.Customer);
             //var cust = _Context.Users.;
             var cascadeModel = new CascadeViewModel()
             {

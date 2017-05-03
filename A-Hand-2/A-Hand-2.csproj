@@ -252,6 +252,10 @@
     <Compile Include="Migrations\201705030923250_UpdateModelsAfterReturningFromLearning.Designer.cs">
       <DependentUpon>201705030923250_UpdateModelsAfterReturningFromLearning.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705031325518_UpdateCustomerModel.cs" />
+    <Compile Include="Migrations\201705031325518_UpdateCustomerModel.Designer.cs">
+      <DependentUpon>201705031325518_UpdateCustomerModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -402,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705030923250_UpdateModelsAfterReturningFromLearning.resx">
       <DependentUpon>201705030923250_UpdateModelsAfterReturningFromLearning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031325518_UpdateCustomerModel.resx">
+      <DependentUpon>201705031325518_UpdateCustomerModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
