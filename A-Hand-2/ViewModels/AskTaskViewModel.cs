@@ -6,11 +6,11 @@ using A_Hand_2.Models;
 
 namespace A_Hand_2.ViewModels
 {
-    public class AskTaskViewModel
+    public class NewAskTaskViewModel
     {
         public IEnumerable<TaskType> TaskTypes { get; set; }
         public AskTask AskTask { get; set; }
-
+        public string UserId { get; set; }
     }
 
     public class CascadeViewModel
@@ -22,5 +22,12 @@ namespace A_Hand_2.ViewModels
     public class CustomerViewModel
     {
         public IEnumerable<Customer> Customers { get; set; }
+        public string GUID { get; set; }
+    }
+
+    public class UserViewModel
+    {
+        public IEnumerable<ApplicationUser> ApplicationUsers { get; set; }
+
     }
 }

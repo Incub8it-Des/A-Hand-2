@@ -264,6 +264,10 @@
     <Compile Include="Migrations\201705031410426_CreateAskTask.Designer.cs">
       <DependentUpon>201705031410426_CreateAskTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705061111014_RemoveAskTaskFromApplicationUser.cs" />
+    <Compile Include="Migrations\201705061111014_RemoveAskTaskFromApplicationUser.Designer.cs">
+      <DependentUpon>201705061111014_RemoveAskTaskFromApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AskTask.cs" />
@@ -342,6 +346,7 @@
     <Content Include="Views\StaticSite\BecomeAHand.cshtml" />
     <Content Include="Views\AskTask\ShowCascade.cshtml" />
     <Content Include="Views\AskTask\ShowCustomers.cshtml" />
+    <Content Include="Views\AskTask\ShowUser.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -423,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705031410426_CreateAskTask.resx">
       <DependentUpon>201705031410426_CreateAskTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061111014_RemoveAskTaskFromApplicationUser.resx">
+      <DependentUpon>201705061111014_RemoveAskTaskFromApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

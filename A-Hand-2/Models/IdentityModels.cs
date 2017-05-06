@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Security.AccessControl;
 using System.Security.Claims;
@@ -9,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace A_Hand_2.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser, IEnumerable
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -22,10 +23,15 @@ namespace A_Hand_2.Models
         //public string Postcode { get; set; }
 
         public virtual Customer Customer { get; set; }
+
         public virtual AskTask AskTask { get; set; }
         public virtual ICollection<AskTask> AskTasks { get; set; }
 
-        
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -33,7 +39,7 @@ namespace A_Hand_2.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<AskTask> AskTasks { get; set; }
         public DbSet<TaskType> TaskTypes { get; set; }
-
+        
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -43,5 +49,6 @@ namespace A_Hand_2.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }

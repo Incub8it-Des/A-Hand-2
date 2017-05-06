@@ -1,0 +1,14 @@
+﻿@model A_Hand_2.ViewModels.UserViewModel
+
+@{
+    ViewBag.Title = "ShowUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowUser</h2>
+
+@foreach (var mUsers in Model.ApplicationUsers)
+{
+    <p>@mUsers.Id : @*@mUsers.Customer.DisplayName*@ - @mUsers.AskTask.BasicDescription</p>
+    
+}

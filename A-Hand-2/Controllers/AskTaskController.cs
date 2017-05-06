@@ -7,12 +7,15 @@ using System.Web.Mvc;
 using A_Hand_2.Models;
 using A_Hand_2.ViewModels;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace A_Hand_2.Controllers
 {
+    [System.Runtime.InteropServices.Guid("C8CDBFCE-A4C1-4A8B-8983-21D5F3E1BD99")]
     public class AskTaskController : Controller
     {
         private ApplicationDbContext _Context;
+        private ApplicationUser _applicationUser;
 
         public AskTaskController()
         {
@@ -41,48 +44,63 @@ namespace A_Hand_2.Controllers
 
         public ActionResult New()
         {
-            //var viewModel = new AskTask();
             var taskTypes = _Context.TaskTypes.ToList();
+            var userId = User.Identity.GetUserId();
 
-            var viewModel = new AskTaskViewModel()
+            var viewModel = new NewAskTaskViewModel()
             {
-                TaskTypes = taskTypes
+                AskTask = new AskTask(),
+                TaskTypes = taskTypes,
+                UserId = userId
             };
 
             return View(viewModel);
         }
 
-        public ActionResult Create(AskTask askTask)
+        public ActionResult Create(AskTask asktask)
         {
-            //askTask.CustomerId = 5;
-            _Context.AskTasks.Add(askTask);
+            asktask.UserId = User.Identity.GetUserId();
+            _Context.AskTasks.Add(asktask);
             _Context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
 
         }
 
-        public ActionResult ShowCascade()
-        {
-            var user = _Context.Users.Include(U => U.Customer);
-            //var cust = _Context.Users.;
-            var cascadeModel = new CascadeViewModel()
-            {
-                User = user
-                //Customers = cust
-            };
+        //public ActionResult ShowCascade()
+        //{
+        //    var user = _Context.Users.Include(U => U.Customer);
+        //    //var cust = _Context.Users.;
+        //    var cascadeModel = new CascadeViewModel()
+        //    {
+        //        User = user
+        //        //Customers = cust
+        //    };
 
-            return View(cascadeModel);
-        }
+        //    return View(cascadeModel);
+        //}
 
         public ActionResult ShowCustomers()
         {
             var custList = _Context.Customers;
+            var guid = User.Identity.GetUserId();
             var customers = new CustomerViewModel()
             {
-                Customers = custList
+                Customers = custList,
+                GUID = guid
             };
             return View(customers);
         }
+
+        public ActionResult ShowUser()
+        {
+            var userList = new UserViewModel()
+            {
+                ApplicationUsers = _Context.Users.Include(at => at.AskTasks)
+            };
+            
+            return View(userList);
+        }
+
     }
 }
