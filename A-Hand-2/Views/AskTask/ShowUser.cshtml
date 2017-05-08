@@ -14,12 +14,16 @@
     <p style="margin-left: 20px;">@item.Customer.DisplayName</p>
     foreach (var itemAskTask in item.AskTasks)
     {
-        <p style="margin-left: 40px;">@item.Customer.Address1 @itemAskTask.BasicDescription</p>
+        <p style="margin-left: 40px;">@item.Customer.Address1 @itemAskTask.BasicDescription Task Type: @itemAskTask.TaskType.TaskDesc</p>
         
     }
     
     
 }
 
+<table>
+    
+    
 
+</table>
    

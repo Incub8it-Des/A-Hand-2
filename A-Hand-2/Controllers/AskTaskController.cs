@@ -105,7 +105,7 @@ namespace A_Hand_2.Controllers
 
             //var askTask = _Context.AskTasks.Include(at => at.TaskType).ToList();
             //var askTask = _Context.AskTasks.Include(at => at.TaskType);
-            var appUser = _Context.Users.Include(u => u.AskTasks).Include(u => u.Customer);
+            var appUser = _Context.Users.Include(u => u.AskTasks).Include(u => u.Customer).Include(u => u.AskTasks.Select(t => t.TaskType));
 
             return View(appUser);
 
