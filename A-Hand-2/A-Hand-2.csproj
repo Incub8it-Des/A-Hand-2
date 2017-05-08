@@ -173,6 +173,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StaticSiteController.cs" />
+    <Compile Include="Controllers\TaskTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -268,6 +269,10 @@
     <Compile Include="Migrations\201705061111014_RemoveAskTaskFromApplicationUser.Designer.cs">
       <DependentUpon>201705061111014_RemoveAskTaskFromApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705061136086_AddAskTaskToApplicationUser.cs" />
+    <Compile Include="Migrations\201705061136086_AddAskTaskToApplicationUser.Designer.cs">
+      <DependentUpon>201705061136086_AddAskTaskToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AskTask.cs" />
@@ -347,6 +352,11 @@
     <Content Include="Views\AskTask\ShowCascade.cshtml" />
     <Content Include="Views\AskTask\ShowCustomers.cshtml" />
     <Content Include="Views\AskTask\ShowUser.cshtml" />
+    <Content Include="Views\TaskTypes\Create.cshtml" />
+    <Content Include="Views\TaskTypes\Delete.cshtml" />
+    <Content Include="Views\TaskTypes\Details.cshtml" />
+    <Content Include="Views\TaskTypes\Edit.cshtml" />
+    <Content Include="Views\TaskTypes\Index.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -431,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705061111014_RemoveAskTaskFromApplicationUser.resx">
       <DependentUpon>201705061111014_RemoveAskTaskFromApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061136086_AddAskTaskToApplicationUser.resx">
+      <DependentUpon>201705061136086_AddAskTaskToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

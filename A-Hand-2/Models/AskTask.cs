@@ -11,9 +11,6 @@ namespace A_Hand_2.Models
     public class AskTask
 
     {
-        //[Key, ForeignKey("ApplicationUser")]
-        //public string ApplicationUserId { get; set; }
-
         public int Id { get; set; }
 
         [Display(Name = "Basic Task Description")]
@@ -24,9 +21,6 @@ namespace A_Hand_2.Models
 
         public double? MaxValue { get; set; }
         public DateTime? TaskStartDate { get; set; }
-
-        //public Customer Customer { get; set; }
-        //public int CustomerId { get; set; }
 
         public int TaskTypeId { get; set; }
         public TaskType TaskType { get; set; }

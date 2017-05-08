@@ -15,8 +15,7 @@ namespace A_Hand_2.Controllers
     public class AskTaskController : Controller
     {
         private ApplicationDbContext _Context;
-        private ApplicationUser _applicationUser;
-
+        
         public AskTaskController()
         {
             _Context = new ApplicationDbContext();
@@ -31,7 +30,7 @@ namespace A_Hand_2.Controllers
         public ActionResult Save(AskTask askTask)
 
         {
-            //var string userID_Guid = 
+
             var askTaskInDb = _Context.AskTasks.Single(c => c.Id == 5);
 
             askTaskInDb.BasicDescription = askTask.BasicDescription;
@@ -67,18 +66,17 @@ namespace A_Hand_2.Controllers
 
         }
 
-        //public ActionResult ShowCascade()
-        //{
-        //    var user = _Context.Users.Include(U => U.Customer);
-        //    //var cust = _Context.Users.;
-        //    var cascadeModel = new CascadeViewModel()
-        //    {
-        //        User = user
-        //        //Customers = cust
-        //    };
+        public ActionResult ShowCascade()
+        {
+            var user = _Context.Users.Include(u => u.Customer);
+            
+            var cascadeModel = new CascadeViewModel()
+            {
+                User = user
+            };
 
-        //    return View(cascadeModel);
-        //}
+            return View(cascadeModel);
+        }
 
         public ActionResult ShowCustomers()
         {
@@ -94,12 +92,23 @@ namespace A_Hand_2.Controllers
 
         public ActionResult ShowUser()
         {
-            var userList = new UserViewModel()
-            {
-                ApplicationUsers = _Context.Users.Include(at => at.AskTasks)
-            };
-            
-            return View(userList);
+            //var userList = new UserViewModel()
+            //{
+            //    //ApplicationUsers = _Context.Users.Include(at => at.AskTasks)
+            //    //ApplicationUsers = _Context.Users.Include(c => c.Customer).Include(at => at.AskTasks)
+            //    //ApplicationUsers = _Context.Users.Include(at => at.AskTasks)
+
+
+            //};
+
+            //ApplicationUser applicationUser = _Context.Users;
+
+            //var askTask = _Context.AskTasks.Include(at => at.TaskType).ToList();
+            //var askTask = _Context.AskTasks.Include(at => at.TaskType);
+            var appUser = _Context.Users.Include(u => u.AskTasks).Include(u => u.Customer);
+
+            return View(appUser);
+
         }
 
     }

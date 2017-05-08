@@ -1,4 +1,5 @@
-﻿@model A_Hand_2.ViewModels.UserViewModel
+﻿@*@model IEnumerable<A_Hand_2.Models.AskTask>*@
+@model IEnumerable<A_Hand_2.Models.ApplicationUser>
 
 @{
     ViewBag.Title = "ShowUser";
@@ -7,8 +8,18 @@
 
 <h2>ShowUser</h2>
 
-@foreach (var mUsers in Model.ApplicationUsers)
+@foreach (var item in Model)
 {
-    <p>@mUsers.Id : @*@mUsers.Customer.DisplayName*@ - @mUsers.AskTask.BasicDescription</p>
+    <p>@item.UserName</p>
+    <p style="margin-left: 20px;">@item.Customer.DisplayName</p>
+    foreach (var itemAskTask in item.AskTasks)
+    {
+        <p style="margin-left: 40px;">@item.Customer.Address1 @itemAskTask.BasicDescription</p>
+        
+    }
+    
     
 }
+
+
+   

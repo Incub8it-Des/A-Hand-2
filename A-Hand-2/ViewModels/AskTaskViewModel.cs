@@ -28,6 +28,8 @@ namespace A_Hand_2.ViewModels
     public class UserViewModel
     {
         public IEnumerable<ApplicationUser> ApplicationUsers { get; set; }
+        public IEnumerable<Customer> Customers { get; set; }
+        public IEnumerable<AskTask> AskTasks { get; set; }
 
     }
 }
