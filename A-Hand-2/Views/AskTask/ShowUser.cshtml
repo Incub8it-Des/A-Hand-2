@@ -2,28 +2,46 @@
 @model IEnumerable<A_Hand_2.Models.ApplicationUser>
 
 @{
-    ViewBag.Title = "ShowUser";
+    ViewBag.Title = "Show Customer Task Request Information";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>ShowUser</h2>
 
 @foreach (var item in Model)
-{
-    <p>@item.UserName</p>
-    <p style="margin-left: 20px;">@item.Customer.DisplayName</p>
-    foreach (var itemAskTask in item.AskTasks)
+{    
+    <p>User Name: @item.UserName</p>
+    <p style="margin-left: 20px;">Customer Display Name: @item.Customer.DisplayName</p>
+
+    if (item.AskTasks.Count > 0)
     {
-        <p style="margin-left: 40px;">@item.Customer.Address1 @itemAskTask.BasicDescription Task Type: @itemAskTask.TaskType.TaskDesc</p>
-        
+        <table class="table table-striped table-hover " style="margin-left: 40px;">
+            <thead>
+            <tr>
+                <th>Task Type</th>
+                <th>Basic Description</th>
+                <th>Further Description</th>
+            </tr>
+            </thead>
+
+
+            @foreach (var itemAskTask in item.AskTasks)
+            {
+                <tr>
+                    <td>@itemAskTask.TaskType.TaskDesc</td>
+                    <td>@itemAskTask.BasicDescription</td>
+                    <td>@itemAskTask.FurtherDetail</td>
+                </tr>
+            }
+
+        </table>
     }
-    
-    
+    else
+    {
+        <p style="margin-left: 40px; font-weight: bold; color: crimson;">No tasks requested yet</p>
+    }
+    <hr/>
 }
 
-<table>
-    
-    
 
-</table>
    

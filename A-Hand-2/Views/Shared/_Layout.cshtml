@@ -7,6 +7,26 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+
+    
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#000"
+                    },
+                    "button": {
+                        "background": "#f1d600"
+                    }
+                },
+                "position": "top"
+            })});
+    </script>    
+    
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -25,8 +45,9 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("How does it work?", "HowItWorks", "StaticSite")</li>
-                    <li>@Html.ActionLink("Show Users","ShowUser", "AskTask")</li>
-                    <li>@Html.ActionLink("Add Task Types", "Index", "TaskTypes")</li>
+                    @*@<li>@Html.ActionLink("Show Requests","ShowUser", "AskTask")</li>
+                    <li>@Html.ActionLink("Show Customers", "Index", "Customers")</li>
+                    <li>@Html.ActionLink("Add Task Types", "Index", "TaskTypes")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -17,11 +17,11 @@ namespace A_Hand_2.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        //private ApplicationDbContext _Context;
+        private ApplicationDbContext _Context;
 
         public AccountController()
         {
-            //_Context = new ApplicationDbContext();
+            _Context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -167,6 +167,11 @@ namespace A_Hand_2.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //var newUser = user.Id;
+                    //db.Customers.Add(customer);
+                    //db.SaveChanges();
+
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -432,7 +437,7 @@ namespace A_Hand_2.Controllers
                 }
             }
 
-            //_Context.Dispose();
+            _Context.Dispose();
 
             base.Dispose(disposing);
         }

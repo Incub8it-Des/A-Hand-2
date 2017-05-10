@@ -5,32 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>To start registering your request, please complete the following form:</h3>
 
-User GUID: @Model.UserId
 
-@*<ul>
-@foreach (var user in Model.ApplicationUsers)
-{
-    <li>@user.Email</li>
-} 
-    
-</ul>*@
-@using (Html.BeginForm("Create", "AskTask"))
-{
-    <div class="form-group">
-        @Html.LabelFor(m => m.AskTask.BasicDescription)
-        @Html.TextBoxFor(m => m.AskTask.BasicDescription, new { @class = "form-control"})
-    </div>   
-    <div class="form-group">
-        @Html.LabelFor(m => m.AskTask.FurtherDetail)
-        @Html.TextBoxFor(m => m.AskTask.FurtherDetail, new { @class = "form-control"})
-    </div> 
-    <div class="form-group">
-        @Html.LabelFor(m => m.AskTask.TaskTypeId)
-        @Html.DropDownListFor(m => m.AskTask.TaskTypeId, new SelectList(Model.TaskTypes, "Id", "TaskDesc"), null, new { @class = "form-control"})
 
-    </div>
-   // @Html.HiddenFor(u => u.AskTask.UserId)
-    <button type="submit" class="btn btn-primary">Save</button>
-}
+
+
+    <h3>To start registering your request, please complete the following form:</h3>
+
+    @*User GUID: @Model.UserId*@
+
+    @*<ul>
+        @foreach (var user in Model.ApplicationUsers)
+        {
+            <li>@user.Email</li>
+        }
+
+        </ul>*@
+    @using (Html.BeginForm("Create", "AskTask"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.AskTask.BasicDescription)
+            @Html.TextBoxFor(m => m.AskTask.BasicDescription, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.AskTask.FurtherDetail)
+            @Html.TextBoxFor(m => m.AskTask.FurtherDetail, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.AskTask.TaskTypeId)
+            @Html.DropDownListFor(m => m.AskTask.TaskTypeId, new SelectList(Model.TaskTypes, "Id", "TaskDesc"), null, new { @class = "form-control" })
+
+        </div>
+        // @Html.HiddenFor(u => u.AskTask.UserId)
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
