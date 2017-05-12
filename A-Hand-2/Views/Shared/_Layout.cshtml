@@ -45,11 +45,22 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("How does it work?", "HowItWorks", "StaticSite")</li>
+
                     @*@<li>@Html.ActionLink("Show Requests","ShowUser", "AskTask")</li>
                     <li>@Html.ActionLink("Show Customers", "Index", "Customers")</li>
                     <li>@Html.ActionLink("Add Task Types", "Index", "TaskTypes")</li>*@
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @if (User.IsInRole("CanManageRequests"))
+                {
+                    @Html.Partial("_LoginPartialAdmin")
+                    ;
+                }
+                else
+                {
+                    @Html.Partial("_LoginPartial")
+                    ;
+                }
+
             </div>
         </div>
     </div>

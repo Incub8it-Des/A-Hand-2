@@ -12,6 +12,7 @@ namespace A_Hand_2.Models
         [Key, ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
 
+        [Display(Name = "Display Name")]
         public string DisplayName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }

@@ -20,15 +20,27 @@ namespace A_Hand_2.Controllers
 
         public ActionResult Index()
         {
-            var currentUserId = User.Identity.GetUserId();
+            //var currentUserId = User.Identity.GetUserId();
             // var customerInfo = _Context.Customers.SingleOrDefault(p => p.UserId = currentUserId);
 
             //if (customerInfo == null)
             //{
             //    customerInfo = _Context.Customers.Create();
+            if (User.Identity.IsAuthenticated)
+            {
+                var currentUserId = User.Identity.GetUserId();
 
+                var customerInDb = _Context.Customers.SingleOrDefault(c => c.ApplicationUserId == currentUserId);
 
-
+                if (customerInDb == null)
+                {
+                    Customer newCustomer = new Customer();
+                    newCustomer.ApplicationUserId = User.Identity.GetUserId();
+                    newCustomer.DisplayName = User.Identity.Name;
+                    _Context.Customers.Add(newCustomer);
+                    _Context.SaveChanges();
+                }
+            }
             return View();
         }
 

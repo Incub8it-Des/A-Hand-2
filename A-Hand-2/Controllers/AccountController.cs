@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using A_Hand_2.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace A_Hand_2.Controllers
 {
@@ -81,16 +82,6 @@ namespace A_Hand_2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-
-                    //var currentUserId = User.Identity.GetUserId();
-
-                    //var customerInfo = _Context.Customers.SingleOrDefault(p => p.UserId = currentUserId);
-
-                    //if (customerInfo == null)
-                    //{
-                    //    customerInfo = _Context.Customers.Create();
-                    //}
-                    
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -167,18 +158,20 @@ namespace A_Hand_2.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    //var newUser = user.Id;
-                    //db.Customers.Add(customer);
-                    //db.SaveChanges();
+                    //Temp Code
 
+                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var roleManager  = new RoleManager<IdentityRole>(roleStore);
+                    //await roleManager.CreateAsync(new IdentityRole("CanManageRequests"));
+                    //await UserManager.AddToRoleAsync(user.Id, "CanManageRequests");
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
