@@ -291,6 +291,10 @@
     <Compile Include="Migrations\201705101301214_SeedUsers.Designer.cs">
       <DependentUpon>201705101301214_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705121447170_AddExtraAskTaskFields.cs" />
+    <Compile Include="Migrations\201705121447170_AddExtraAskTaskFields.Designer.cs">
+      <DependentUpon>201705121447170_AddExtraAskTaskFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AskTask.cs" />
@@ -472,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705101301214_SeedUsers.resx">
       <DependentUpon>201705101301214_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705121447170_AddExtraAskTaskFields.resx">
+      <DependentUpon>201705121447170_AddExtraAskTaskFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

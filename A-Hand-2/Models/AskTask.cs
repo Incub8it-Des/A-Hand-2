@@ -19,8 +19,13 @@ namespace A_Hand_2.Models
         [Display(Name = "Further Details")]
         public string FurtherDetail { get; set; }
 
+        [Display(Name = "Maximum I'm prepared to pay")]
         public double? MaxValue { get; set; }
+        [Display(Name = "I need this to work doing on")]
         public DateTime? TaskStartDate { get; set; }
+
+        [Display(Name = "The work needs to be done in")]
+        public string TaskTown { get; set; }
 
         public int TaskTypeId { get; set; }
         public TaskType TaskType { get; set; }
