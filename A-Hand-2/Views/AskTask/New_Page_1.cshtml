@@ -1,19 +1,15 @@
 ﻿@model A_Hand_2.ViewModels.NewAskTaskViewModel
 
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "New Request";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
-
 
 
     <h3>To start registering your request, please complete the following form:</h3>
 
 
-    @using (Html.BeginForm("Create", "AskTask"))
+    @using (Html.BeginForm("Save_Page_1", "AskTask"))
     {
         <div class="form-group">
             @Html.LabelFor(m => m.AskTask.BasicDescription)

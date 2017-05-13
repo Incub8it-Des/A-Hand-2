@@ -18,6 +18,7 @@ namespace A_Hand_2.Controllers
         public ActionResult Index()
         {
             var customers = db.Customers.Include(c => c.ApplicationUser);
+            customers = customers.OrderBy(Customer => Customer.DisplayName);
             return View(customers.ToList());
         }
 
@@ -105,6 +106,23 @@ namespace A_Hand_2.Controllers
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            ViewBag.ApplicationUserId = new SelectList(db.Users, "Id", "Email", customer.ApplicationUserId);
+            return View(customer);
+        }
+
+        // POST: Customers/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditSingle([Bind(Include = "ApplicationUserId,DisplayName,Address1,Address2,Address3,Address4,Postcode")] Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(customer).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.ApplicationUserId = new SelectList(db.Users, "Id", "Email", customer.ApplicationUserId);
             return View(customer);

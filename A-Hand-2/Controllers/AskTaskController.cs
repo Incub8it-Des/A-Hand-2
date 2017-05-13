@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using A_Hand_2.Models;
 using A_Hand_2.ViewModels;
 using Microsoft.AspNet.Identity;
@@ -41,7 +42,7 @@ namespace A_Hand_2.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult New()
+        public ActionResult New_Page_1()
         {
             var taskTypes = _Context.TaskTypes.ToList();
             var userId = User.Identity.GetUserId();
@@ -56,10 +57,28 @@ namespace A_Hand_2.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Create(AskTask asktask)
+        public ActionResult Save_Page_1(AskTask asktask)
         {
             asktask.UserId = User.Identity.GetUserId();
             _Context.AskTasks.Add(asktask);
+            _Context.SaveChanges();
+
+            int NewId = asktask.Id;
+
+            var askTaskToPass = _Context.AskTasks.SingleOrDefault(at => at.Id == NewId);
+
+            return View("New_Page_2",askTaskToPass);
+
+        }
+
+        public ActionResult Create(AskTask asktask)
+        {
+            //asktask.UserId = User.Identity.GetUserId();
+            var customerInDb = _Context.AskTasks.Single(c => c.Id == asktask.Id);
+
+            customerInDb.MaxValue = asktask.MaxValue;
+            customerInDb.TaskStartDate = asktask.TaskStartDate;
+            customerInDb.TaskTown = asktask.TaskTown;
             _Context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
@@ -106,6 +125,8 @@ namespace A_Hand_2.Controllers
             //var askTask = _Context.AskTasks.Include(at => at.TaskType).ToList();
             //var askTask = _Context.AskTasks.Include(at => at.TaskType);
             var appUser = _Context.Users.Include(u => u.AskTasks).Include(u => u.Customer).Include(u => u.AskTasks.Select(t => t.TaskType));
+
+            appUser = appUser.OrderBy(ApplicationUser => ApplicationUser.Customer.DisplayName);
 
             return View(appUser);
 

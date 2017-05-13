@@ -368,7 +368,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\StaticSite\HowItWorks.cshtml" />
-    <Content Include="Views\AskTask\New.cshtml" />
+    <Content Include="Views\AskTask\New_Page_1.cshtml" />
     <Content Include="Views\StaticSite\Testimonials.cshtml" />
     <Content Include="Views\StaticSite\BecomeAHand.cshtml" />
     <Content Include="Views\AskTask\ShowCascade.cshtml" />
@@ -386,6 +386,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartialAdmin.cshtml" />
     <Content Include="Views\Customers\EditSingle.cshtml" />
+    <Content Include="Views\AskTask\New_Page_2.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -21,7 +21,7 @@ namespace A_Hand_2.Models
 
         [Display(Name = "Maximum I'm prepared to pay")]
         public double? MaxValue { get; set; }
-        [Display(Name = "I need this to work doing on")]
+        [Display(Name = "I need this work doing on")]
         public DateTime? TaskStartDate { get; set; }
 
         [Display(Name = "The work needs to be done in")]
