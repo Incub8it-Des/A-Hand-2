@@ -111,24 +111,24 @@ namespace A_Hand_2.Controllers
 
         public ActionResult ShowUser()
         {
-            //var userList = new UserViewModel()
-            //{
-            //    //ApplicationUsers = _Context.Users.Include(at => at.AskTasks)
-            //    //ApplicationUsers = _Context.Users.Include(c => c.Customer).Include(at => at.AskTasks)
-            //    //ApplicationUsers = _Context.Users.Include(at => at.AskTasks)
 
-
-            //};
-
-            //ApplicationUser applicationUser = _Context.Users;
-
-            //var askTask = _Context.AskTasks.Include(at => at.TaskType).ToList();
-            //var askTask = _Context.AskTasks.Include(at => at.TaskType);
             var appUser = _Context.Users.Include(u => u.AskTasks).Include(u => u.Customer).Include(u => u.AskTasks.Select(t => t.TaskType));
 
             appUser = appUser.OrderBy(ApplicationUser => ApplicationUser.Customer.DisplayName);
 
             return View(appUser);
+
+        }
+
+        public ActionResult ShowUserAskTask()
+        {
+            var currUser = User.Identity.GetUserId();
+            var appUser = _Context.Users.Include(u => u.AskTasks).Include(u => u.Customer).Include(u => u.AskTasks.Select(t => t.TaskType)).Where( u => u.Id == currUser);
+            //var appUser = _Context.Users.Include(u => u.AskTasks).Include(u => u.Customer).Include(u => u.AskTasks.Select(t => t.TaskType));
+
+            appUser = appUser.OrderBy(ApplicationUser => ApplicationUser.Customer.DisplayName);
+
+            return View("ShowUser", appUser);
 
         }
 

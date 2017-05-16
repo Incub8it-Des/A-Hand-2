@@ -20,8 +20,12 @@ namespace A_Hand_2.Models
         public string FurtherDetail { get; set; }
 
         [Display(Name = "Maximum I'm prepared to pay")]
+        [Range(1, 1000, ErrorMessage = "Price must be between £1 and £1000")]
+        [DataType(DataType.Currency)]
         public double? MaxValue { get; set; }
+
         [Display(Name = "I need this work doing on")]
+        [DataType(DataType.Date)]
         public DateTime? TaskStartDate { get; set; }
 
         [Display(Name = "The work needs to be done in")]
