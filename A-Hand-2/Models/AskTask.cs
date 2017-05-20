@@ -25,7 +25,8 @@ namespace A_Hand_2.Models
         public double? MaxValue { get; set; }
 
         [Display(Name = "I need this work doing on")]
-        [DataType(DataType.Date)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? TaskStartDate { get; set; }
 
         [Display(Name = "The work needs to be done in")]

@@ -46,5 +46,6 @@ namespace A_Hand_2.Models
             return new ApplicationDbContext();
         }
 
+        public System.Data.Entity.DbSet<A_Hand_2.Models.zClass1> zClass1 { get; set; }
     }
 }

@@ -1,0 +1,88 @@
+﻿@model A_Hand_2.Models.AskTask
+
+@{
+    ViewBag.Title = "New Request";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3>Please complete the remaining information to complete the process:</h3>
+
+
+    @using (Html.BeginForm("Create", "AskTask"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.MaxValue)
+            @Html.TextBoxFor(m => m.MaxValue, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.TaskStartDate, htmlAttributes: new {@class = "control-label col-md-3"})
+        @*<div class="col-md-8">*@
+            
+            <div class="col-md-8">
+                @Html.EditorFor(m => m.TaskStartDate@*,
+                    new
+                    {
+                        htmlAttributes = new
+                        {
+                            @Value = "DD/MM/YYYY",
+                            @class = "form-control"
+                        },
+                    }*@)
+                @Html.ValidationMessageFor(model => model.TaskStartDate, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.TaskTown)
+            @Html.TextBoxFor(m => m.TaskTown, new { @class = "form-control" })
+
+        </div>
+
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.TaskStartDate, 
+                htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TaskStartDate,
+                    new { htmlAttributes = new { 
+                        //@Value = Model.TaskStartDate.ToString("MM/dd/yyyy"), 
+                        @class = "form-control" }, })
+                @Html.ValidationMessageFor(model => model.TaskStartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+
+
+
+        @Html.HiddenFor(Model => Model.Id)
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $('#TaskStartDate').datetimepicker({
+                defaultDate: '@Model.TaskStartDate',
+                format: 'L',
+                showClose: true,
+                showClear: true,
+                toolbarPlacement: 'top'
+            });
+            @*$('#AnnualMeetingStartTime').datetimepicker({
+                defaultDate: '@Model.TaskStartDate',
+                format: 'LT',
+                showClose: true,
+                showClear: true,
+                toolbarPlacement: 'top',
+                stepping: 15
+            });*@
+        });
+    </script>
+}
