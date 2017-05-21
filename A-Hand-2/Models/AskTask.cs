@@ -32,11 +32,16 @@ namespace A_Hand_2.Models
         [Display(Name = "The work needs to be done in")]
         public string TaskTown { get; set; }
 
+        public DateTime? LoggedOn { get; set; }
+
         public int TaskTypeId { get; set; }
         public TaskType TaskType { get; set; }
 
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
+
+        public int TaskStatusId { get; set; }
+        public TaskStatus TaskStatus { get; set; }
 
     }
 }

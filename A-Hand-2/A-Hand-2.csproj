@@ -300,12 +300,33 @@
     <Compile Include="Migrations\201705160920210_AddzModel.Designer.cs">
       <DependentUpon>201705160920210_AddzModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705200638036_CreateTaskStatus.cs" />
+    <Compile Include="Migrations\201705200638036_CreateTaskStatus.Designer.cs">
+      <DependentUpon>201705200638036_CreateTaskStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210610584_AddTaskStatusIDToAskTask.cs" />
+    <Compile Include="Migrations\201705210610584_AddTaskStatusIDToAskTask.Designer.cs">
+      <DependentUpon>201705210610584_AddTaskStatusIDToAskTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210614410_AddTaskStatusLinktoAskTask.cs" />
+    <Compile Include="Migrations\201705210614410_AddTaskStatusLinktoAskTask.Designer.cs">
+      <DependentUpon>201705210614410_AddTaskStatusLinktoAskTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210822477_AddLoggedOnToAskTask.cs" />
+    <Compile Include="Migrations\201705210822477_AddLoggedOnToAskTask.Designer.cs">
+      <DependentUpon>201705210822477_AddLoggedOnToAskTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211018318_MakeLoggedOnNullable.cs" />
+    <Compile Include="Migrations\201705211018318_MakeLoggedOnNullable.Designer.cs">
+      <DependentUpon>201705211018318_MakeLoggedOnNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AskTask.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TaskStatus.cs" />
     <Compile Include="Models\TaskType.cs" />
     <Compile Include="Models\zClass1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -627,6 +648,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705160920210_AddzModel.resx">
       <DependentUpon>201705160920210_AddzModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705200638036_CreateTaskStatus.resx">
+      <DependentUpon>201705200638036_CreateTaskStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210610584_AddTaskStatusIDToAskTask.resx">
+      <DependentUpon>201705210610584_AddTaskStatusIDToAskTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210614410_AddTaskStatusLinktoAskTask.resx">
+      <DependentUpon>201705210614410_AddTaskStatusLinktoAskTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210822477_AddLoggedOnToAskTask.resx">
+      <DependentUpon>201705210822477_AddLoggedOnToAskTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211018318_MakeLoggedOnNullable.resx">
+      <DependentUpon>201705211018318_MakeLoggedOnNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

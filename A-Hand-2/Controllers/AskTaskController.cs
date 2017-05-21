@@ -60,7 +60,12 @@ namespace A_Hand_2.Controllers
         public ActionResult Save_Page_1(AskTask asktask)
         {
             asktask.UserId = User.Identity.GetUserId();
+            asktask.TaskStatusId = 1;
+            DateTime dateNow = DateTime.Now.AddHours(-1);
+            asktask.LoggedOn = dateNow;
+
             _Context.AskTasks.Add(asktask);
+
             _Context.SaveChanges();
 
             int NewId = asktask.Id;
@@ -73,12 +78,13 @@ namespace A_Hand_2.Controllers
 
         public ActionResult Create(AskTask asktask)
         {
-            //asktask.UserId = User.Identity.GetUserId();
+
             var customerInDb = _Context.AskTasks.Single(c => c.Id == asktask.Id);
 
             customerInDb.MaxValue = asktask.MaxValue;
             customerInDb.TaskStartDate = asktask.TaskStartDate;
             customerInDb.TaskTown = asktask.TaskTown;
+
             _Context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
