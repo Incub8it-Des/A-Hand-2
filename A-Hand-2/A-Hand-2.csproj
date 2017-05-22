@@ -320,6 +320,14 @@
     <Compile Include="Migrations\201705211018318_MakeLoggedOnNullable.Designer.cs">
       <DependentUpon>201705211018318_MakeLoggedOnNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705220634327_AddVillages.cs" />
+    <Compile Include="Migrations\201705220634327_AddVillages.Designer.cs">
+      <DependentUpon>201705220634327_AddVillages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705220641063_SeedVillages.cs" />
+    <Compile Include="Migrations\201705220641063_SeedVillages.Designer.cs">
+      <DependentUpon>201705220641063_SeedVillages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AskTask.cs" />
@@ -328,6 +336,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TaskStatus.cs" />
     <Compile Include="Models\TaskType.cs" />
+    <Compile Include="Models\Village.cs" />
     <Compile Include="Models\zClass1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -663,6 +672,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705211018318_MakeLoggedOnNullable.resx">
       <DependentUpon>201705211018318_MakeLoggedOnNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705220634327_AddVillages.resx">
+      <DependentUpon>201705220634327_AddVillages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705220641063_SeedVillages.resx">
+      <DependentUpon>201705220641063_SeedVillages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

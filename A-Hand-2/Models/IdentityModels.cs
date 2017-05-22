@@ -36,6 +36,7 @@ namespace A_Hand_2.Models
         public DbSet<AskTask> AskTasks { get; set; }
         public DbSet<TaskType> TaskTypes { get; set; }
         public DbSet<TaskStatus> TaskStatuses { get; set; }
+        public DbSet<Village> Villages { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
