@@ -181,6 +181,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AJAXController.cs" />
     <Compile Include="Controllers\api\AskTaskApiController.cs" />
     <Compile Include="Controllers\AskTaskController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
@@ -565,6 +566,7 @@
     <Content Include="Views\Customers\EditSingle.cshtml" />
     <Content Include="Views\AskTask\New_Page_2.cshtml" />
     <Content Include="Views\z\Index.cshtml" />
+    <Content Include="Views\AJAX\Index.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
