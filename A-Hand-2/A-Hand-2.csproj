@@ -189,6 +189,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StaticSiteController.cs" />
     <Compile Include="Controllers\TaskTypesController.cs" />
+    <Compile Include="Controllers\VillagesController.cs" />
     <Compile Include="Controllers\zController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -328,6 +329,10 @@
     <Compile Include="Migrations\201705220641063_SeedVillages.cs" />
     <Compile Include="Migrations\201705220641063_SeedVillages.Designer.cs">
       <DependentUpon>201705220641063_SeedVillages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705240748379_2ndSeedVillages.cs" />
+    <Compile Include="Migrations\201705240748379_2ndSeedVillages.Designer.cs">
+      <DependentUpon>201705240748379_2ndSeedVillages.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -567,6 +572,11 @@
     <Content Include="Views\AskTask\New_Page_2.cshtml" />
     <Content Include="Views\z\Index.cshtml" />
     <Content Include="Views\AJAX\Index.cshtml" />
+    <Content Include="Views\Villages\Create.cshtml" />
+    <Content Include="Views\Villages\Delete.cshtml" />
+    <Content Include="Views\Villages\Details.cshtml" />
+    <Content Include="Views\Villages\Edit.cshtml" />
+    <Content Include="Views\Villages\Index.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -680,6 +690,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705220641063_SeedVillages.resx">
       <DependentUpon>201705220641063_SeedVillages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705240748379_2ndSeedVillages.resx">
+      <DependentUpon>201705240748379_2ndSeedVillages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
