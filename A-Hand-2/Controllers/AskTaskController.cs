@@ -84,6 +84,7 @@ namespace A_Hand_2.Controllers
             customerInDb.MaxValue = asktask.MaxValue;
             customerInDb.TaskStartDate = asktask.TaskStartDate;
             customerInDb.TaskTown = asktask.TaskTown;
+            customerInDb.TaskTownId = asktask.TaskTownId;
 
             _Context.SaveChanges();
 

@@ -5,69 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<h3>Please complete the remaining information to complete the process:</h3>
-
-
-    @using (Html.BeginForm("Create", "AskTask"))
-    {
-        <div class="form-group">
-            @Html.LabelFor(m => m.MaxValue)
-            @Html.TextBoxFor(m => m.MaxValue, new { @class = "form-control" })
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.TaskStartDate, htmlAttributes: new {@class = "control-label col-md-3"})
-        @*<div class="col-md-8">*@
-            
-            <div class="col-md-8">
-                @Html.EditorFor(m => m.TaskStartDate@*,
-                    new
-                    {
-                        htmlAttributes = new
-                        {
-                            @Value = "DD/MM/YYYY",
-                            @class = "form-control"
-                        },
-                    }*@)
-                @Html.ValidationMessageFor(model => model.TaskStartDate, "", new {@class = "text-danger"})
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.TaskTown)
-            @Html.TextBoxFor(m => m.TaskTown, new { @class = "form-control" })
-
-        </div>
-
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.TaskStartDate, 
-                htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-8">
-                @Html.EditorFor(model => model.TaskStartDate,
-                    new { htmlAttributes = new { 
-                        //@Value = Model.TaskStartDate.ToString("MM/dd/yyyy"), 
-                        @class = "form-control" }, })
-                @Html.ValidationMessageFor(model => model.TaskStartDate, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-
-
-
-
-
-
-
-
-
-        @Html.HiddenFor(Model => Model.Id)
-        <button type="submit" class="btn btn-primary">Save</button>
-    }
-
 @section scripts {
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             $('#TaskStartDate').datetimepicker({
                 defaultDate: '@Model.TaskStartDate',
                 format: 'L',
@@ -85,4 +25,67 @@
             });*@
         });
     </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $("#txtCustomer").autocomplete({
+                source: function(request, response) {
+                    $.ajax({
+                        url: '/AJAX/AutoComplete/',
+                        data: "{ 'prefix': '" + request.term + "'}",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        success: function(data) {
+                            response($.map(data,
+                                function(item) {
+                                    return item;
+                                }))
+                        },
+                        error: function(response) {
+                            alert(response.responseText);
+                        },
+                        failure: function(response) {
+                            alert(response.responseText);
+                        }
+                    });
+                },
+                select: function(e, i) {
+                    $("#hfCustomer").val(i.item.val);
+                },
+                minLength: 1
+            });
+        });
+    </script>
+
 }
+
+<h3>Please complete the remaining information to complete the process:</h3>
+
+
+    @using (Html.BeginForm("Create", "AskTask"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.MaxValue)
+            @Html.TextBoxFor(m => m.MaxValue, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group col-xs-12">
+            @Html.LabelFor(m => m.TaskStartDate, htmlAttributes: new {@class = "control-label"})
+            @Html.TextBoxFor(m => m.TaskStartDate, new {@class = "form-control"})
+            @Html.ValidationMessageFor(model => model.TaskStartDate, "", new {@class = "text-danger"})
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.TaskTown)
+            @Html.TextBoxFor(m => m.TaskTown, new { @class = "form-control", id = "txtCustomer" })
+        </div>
+
+
+        @Html.HiddenFor(Model => Model.TaskTownId, new {id="hfCustomer"})
+        @Html.HiddenFor(Model => Model.Id)
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
+

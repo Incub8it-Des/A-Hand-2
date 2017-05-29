@@ -1,0 +1,29 @@
+﻿@model A_Hand_2.Models.zClass1
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    
+    <script type="text/javascript">
+        $(function() {
+            $("#zDate").datetimepicker({ format: 'DD/MM/YYYY' });
+        });
+    </script>    
+
+}
+
+
+<h2>Date Picker</h2>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+</div>
+
+<div class="form-group col-xs-12">
+    @Html.LabelFor(model => model.zDate)
+    @Html.TextBoxFor(model => model.zDate, new { @class = "form-control" })
+</div>

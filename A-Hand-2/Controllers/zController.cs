@@ -13,5 +13,10 @@ namespace A_Hand_2.Controllers
         {
             return View();
         }
+
+        public ActionResult DatePick()
+        {
+            return View();
+        }
     }
 }

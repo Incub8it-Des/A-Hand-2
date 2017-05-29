@@ -32,6 +32,8 @@ namespace A_Hand_2.Models
         [Display(Name = "The work needs to be done in")]
         public string TaskTown { get; set; }
 
+        public int? TaskTownId { get; set; }
+    
         public DateTime? LoggedOn { get; set; }
 
         public int TaskTypeId { get; set; }

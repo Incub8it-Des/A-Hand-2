@@ -17,8 +17,8 @@ namespace A_Hand_2.Controllers
         // GET: Villages
         public ActionResult Index()
         {
-            var villages = db.Villages.ToList();
-            villages.OrderBy(v => v.VillageName);
+            var villages = db.Villages.OrderBy(v => v.VillageName).ToList();
+            //villages.OrderBy(v => v.VillageName);
             return View(villages);
         }
 

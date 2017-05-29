@@ -334,6 +334,10 @@
     <Compile Include="Migrations\201705240748379_2ndSeedVillages.Designer.cs">
       <DependentUpon>201705240748379_2ndSeedVillages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705241031271_AddTaskTownIdToAskTask.cs" />
+    <Compile Include="Migrations\201705241031271_AddTaskTownIdToAskTask.Designer.cs">
+      <DependentUpon>201705241031271_AddTaskTownIdToAskTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AskTask.cs" />
@@ -577,6 +581,7 @@
     <Content Include="Views\Villages\Details.cshtml" />
     <Content Include="Views\Villages\Edit.cshtml" />
     <Content Include="Views\Villages\Index.cshtml" />
+    <Content Include="Views\z\DatePick.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -693,6 +698,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705240748379_2ndSeedVillages.resx">
       <DependentUpon>201705240748379_2ndSeedVillages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241031271_AddTaskTownIdToAskTask.resx">
+      <DependentUpon>201705241031271_AddTaskTownIdToAskTask.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
